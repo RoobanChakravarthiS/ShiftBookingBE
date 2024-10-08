@@ -57,7 +57,7 @@ Example:
 }
 ```
 
-### `POST /shifts/{id}/book`
+### `GET /shifts/{id}/book`
 
 > Books a shift by ID
 
@@ -80,7 +80,7 @@ Example:
 }
 ```
 
-### `POST /shifts/{id}/cancel`
+### `GET /shifts/{id}/cancel`
 
 > Cancels a shift by ID
 
