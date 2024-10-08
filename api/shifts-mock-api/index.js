@@ -38,11 +38,12 @@ const routes = [
     },
   },
   {
-    method: 'POST',
+    method: 'GET',
     path: '/{id}/book',
     handler: async ({ params }) => {
+      console.log(params);
       const shift = await db.shifts.get(params.id);
-
+      console.log(shift);
       if (!shift) {
         throw Boom.notFound(`Shift not found with id ${params.id}`);
       } else if (shift.booked) {
@@ -63,22 +64,23 @@ const routes = [
       }
 
       await db.shifts.set(params.id, { booked: true });
-      await delay(500);
+      // await delay(500);
 
       return db.shifts.get(params.id);
     },
-    config: {
-      validate: {
-        params: {
-          id: Joi.string().required(),
-        },
-      },
-    },
+    // config: {
+    //   validate: {
+    //     params: {
+    //       id: Joi.string().required(),
+    //     },
+    //   },
+    // },
   },
   {
-    method: 'POST',
+    method: 'GET',
     path: '/{id}/cancel',
     handler: async ({ params }) => {
+      
       const shift = await db.shifts.get(params.id);
 
       if (!shift) {

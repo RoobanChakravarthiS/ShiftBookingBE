@@ -18,8 +18,12 @@
     "uuid": "^3.3.2"
   },
   "babel": {
-    "presets": [
-      "env"
-    ]
+    "presets": ["@babel/preset-env"]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
+    "@babel/node": "^7.25.7",
+    "@babel/preset-env": "^7.25.7"
   }
 }
